@@ -1,0 +1,7 @@
+ARG_ENABLE('kjmmap', 'kjmmap support', 'no');
+
+if (PHP_KJMMAP != 'no') {
+	AC_DEFINE('HAVE_KJMMAP', 1, 'kjmmap support enabled');
+
+	EXTENSION('kjmmap', 'kjmmap.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
